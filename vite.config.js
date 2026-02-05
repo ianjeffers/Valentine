@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// For GitHub Pages: base must be '/REPO_NAME/' (e.g. '/Valentine/'). Use '/' for username.github.io.
+// Relative base works on GitHub Pages at any path (e.g. .../Valentine/ or .../Valentine).
 export default defineConfig({
   plugins: [react()],
-  base: '/Valentine/',
+  base: './',
 })
