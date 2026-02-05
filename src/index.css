@@ -90,6 +90,78 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
+/* Win screen - You said Yes! */
+.win-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+.win-screen__hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.win-screen__heart {
+  position: absolute;
+  font-size: clamp(20px, 4vw, 28px);
+  opacity: 0.2;
+  animation: win-float 8s ease-in-out infinite;
+}
+
+.win-screen__heart:nth-child(1) { left: 8%; top: 15%; animation-delay: 0s; animation-duration: 7s; }
+.win-screen__heart:nth-child(2) { left: 75%; top: 20%; animation-delay: 1.2s; animation-duration: 8.5s; }
+.win-screen__heart:nth-child(3) { left: 25%; top: 70%; animation-delay: 2.5s; animation-duration: 7.5s; }
+.win-screen__heart:nth-child(4) { left: 85%; top: 65%; animation-delay: 0.8s; animation-duration: 9s; }
+.win-screen__heart:nth-child(5) { left: 50%; top: 85%; animation-delay: 3s; animation-duration: 6.5s; }
+
+@keyframes win-float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.2; }
+  50% { transform: translateY(-12px) scale(1.05); opacity: 0.35; }
+}
+
+.win-screen__title {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  margin-bottom: 0.5rem;
+  color: #ff6b9d;
+  background: linear-gradient(135deg, #ff9ebb 0%, #ff6b9d 50%, #c44569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: win-pop 0.6s ease-out;
+}
+
+.win-screen__subtext {
+  font-size: clamp(1.05rem, 2.8vw, 1.3rem);
+  color: #e8b4c8;
+  margin-bottom: 0.35rem;
+  animation: win-pop 0.6s ease-out 0.1s both;
+}
+
+.win-screen__tagline {
+  font-size: 0.95rem;
+  color: #b8a0b0;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  animation: win-pop 0.6s ease-out 0.2s both;
+}
+
+.win-screen__card {
+  animation: win-pop 0.6s ease-out 0.35s both;
+}
+
+@keyframes win-pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /* Yelp card on Win screen */
 .yelp-card {
   display: block;

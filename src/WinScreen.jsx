@@ -31,15 +31,24 @@ export default function WinScreen() {
   }, [])
 
   return (
-    <div className="screen">
-      <h1 className="screen__title">You said Yes!</h1>
-      <p className="screen__subtext">Happy Valentine&apos;s Day.</p>
+    <div className="screen win-screen">
+      <div className="win-screen__hearts" aria-hidden>
+        <span className="win-screen__heart">❤️</span>
+        <span className="win-screen__heart">💕</span>
+        <span className="win-screen__heart">💗</span>
+        <span className="win-screen__heart">💖</span>
+        <span className="win-screen__heart">💘</span>
+      </div>
+
+      <h1 className="win-screen__title">You said Yes!</h1>
+      <p className="win-screen__subtext">Happy Valentine&apos;s Day.</p>
+      <p className="win-screen__tagline">Can&apos;t wait to celebrate with you.</p>
 
       <a
         href={PREGO_YELP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="yelp-card"
+        className="yelp-card win-screen__card"
       >
         <div className="yelp-card__header">
           <span className="yelp-card__stars">★★★★☆</span>
