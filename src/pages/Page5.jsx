@@ -8,7 +8,7 @@ const BASKET_H = 40
 const BASKET_Y = 30
 const HOOP_W = 44
 const GRAVITY = 0.35
-const BALL_START = { x: GAME_WIDTH / 2, y: GAME_HEIGHT - 40 }
+const BALL_START = { x: GAME_WIDTH / 2, y: GAME_HEIGHT - 58 }
 
 /**
  * Page 5: Make the basket. One ball that respawns at anchor after a miss.
@@ -95,12 +95,12 @@ export default function Page5({ onYes, onNo }) {
     }
     const dx = BALL_START.x - coords.x
     const dy = BALL_START.y - coords.y
-    const mag = Math.min(Math.hypot(dx, dy) * 0.18, 14)
+    const mag = Math.min(Math.hypot(dx, dy) * 0.24, 18)
     const angle = Math.atan2(dy, dx)
     setBall({
       ...BALL_START,
       vx: Math.cos(angle) * mag,
-      vy: Math.sin(angle) * mag - 4,
+      vy: Math.sin(angle) * mag - 5,
       active: true,
     })
     setAiming(false)

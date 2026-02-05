@@ -22,7 +22,9 @@ export default function App() {
     if (fromPage === 7) {
       setSlainByLove(true)
       setShowWin(true)
-    } else if (fromPage >= 2 && fromPage <= 6) {
+    } else if (fromPage === 5 || fromPage === 6) {
+      setShowWin(true)
+    } else if (fromPage >= 2 && fromPage <= 4) {
       setPage(fromPage + 1)
     } else {
       setShowWin(true)
